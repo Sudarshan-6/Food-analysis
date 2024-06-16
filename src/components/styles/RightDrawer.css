@@ -1,0 +1,26 @@
+.drawer {
+    background-color: #CFF4D2; /* Set drawer background color */
+}
+
+.drawer-items{
+    display: flex;
+    justify-content: space-around;
+}
+
+.drawer-item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.drawer-item:hover {
+    background-color: #7BE495;
+    color: white;
+}
+
+.drawer-link {
+    text-decoration: none;
+    color: white;
+}

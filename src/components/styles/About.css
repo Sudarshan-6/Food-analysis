@@ -1,0 +1,20 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+.about-title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: medium;
+    color: gray;
+}

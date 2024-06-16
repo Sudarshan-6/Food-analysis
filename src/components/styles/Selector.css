@@ -1,0 +1,21 @@
+.selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.selector-option {
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    color: #205072; 
+}
+
+.selector-option.selected {
+    background-color: #56C596; /* Changed to the provided color #56C596 */
+    color: white; /* Changed to white */
+}

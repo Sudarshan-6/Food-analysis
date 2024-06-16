@@ -1,0 +1,61 @@
+/* Container styling */
+.info-container {
+    background-color: #f9f9f9; /* Light background for readability */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px; /* Space around the text */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Maximum width for the container */
+    margin: 20px auto; /* Center the container horizontally */
+    font-family: 'Arial', sans-serif; /* Font style */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Title styling */
+.info-title {
+    color: #2c3e50; /* Darker color for the title */
+    font-size: 24px; /* Larger font size for the title */
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center; /* Centered title */
+}
+
+/* List styling */
+.info-list {
+    color: #34495e; /* Slightly lighter color for the list items */
+    font-size: 16px; /* Standard font size for the list items */
+    line-height: 1.6; /* Line height for readability */
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+    margin-top: 15px; /* Space above the list */
+}
+
+/* List item styling */
+.info-list li {
+    margin-bottom: 10px; /* Space below each list item */
+    padding-left: 20px; /* Space to indent list items */
+    position: relative; /* Position relative for the pseudo-element */
+    text-indent: -20px; /* Negative indent for bullet points */
+    padding-left: 25px; /* Padding to match indent */
+    text-align: justify; /* Justify text for clean look */
+    background-color: #eef2f5; /* Light background for points */
+    padding: 10px; /* Padding for points */
+    border-radius: 5px; /* Rounded corners for points */
+}
+
+/* List item bullet styling */
+.info-list li::before {
+    content: "•"; /* Bullet point */
+    color: #e74c3c; /* Bullet point color */
+    position: absolute; /* Position absolute for placement */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+    font-size: 24px; /* Larger size for the bullet point */
+    line-height: 1; /* Line height for alignment */
+}
+
+/* Paragraph styling */
+.info-paragraph {
+    color: #7f8c8d; /* Lighter color for the paragraph */
+    font-size: 16px; /* Standard font size for readability */
+    margin-top: 20px; /* Space above the paragraph */
+    text-align: justify; /* Justify text for clean look */
+}

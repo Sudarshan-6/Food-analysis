@@ -1,0 +1,57 @@
+.nav-container {
+    padding: 1% 2%;
+    background-color: #205072; /* Changed to the provided color #205072 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically center */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-item-group {
+    display: flex;
+    gap: 20px; /* Reduced gap */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    align-items: center;
+}
+
+.nav-title {
+    padding-left: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em; /* Changed to relative size */
+    color: #cff4d2; /* Changed to the provided color #cff4d2 */
+}
+
+.nav-items {
+    padding: 10px; /* Reduced padding */
+    color: #cff4d2; /* Changed to the provided color #cff4d2 */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Add transition */
+}
+
+.nav-items:hover {
+    color: #56C596; /* Changed to the provided color #56C596 */
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .nav-item-group {
+        display: none;
+    }
+    .menu-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 30px;
+        color: #cff4d2; /* Changed to the provided color #cff4d2 */
+    }
+}

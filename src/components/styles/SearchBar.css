@@ -1,0 +1,29 @@
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.search-input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #56C596; /* Using teal color for border */
+    width: 70%;
+}
+
+.search-button {
+    background-color: #329d9c; /* Using teal color for background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #205072; /* Darker teal color on hover */
+}
