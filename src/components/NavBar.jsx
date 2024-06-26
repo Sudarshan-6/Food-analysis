@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles/NavBar.css';
 import HomePage from './HomePage';
 import About from './About';
@@ -10,9 +10,12 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { Tabs, Tab, TabList } from '@chakra-ui/react';
 import UserAvatar from './Avatar';
 import ImageUpload from './ImageUpload';
+import Context from './Context';
 
 function NavBar() {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const {productData} = useContext(Context);
+    
 
     return (
         <Router>
@@ -57,7 +60,7 @@ function NavBar() {
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />
                     <Route exact path="/about" element={<About />} />
-                    <Route exact path="/analysis/*" element={<Analysis />} />
+                    <Route exact path="/analysis/*" element={<Analysis data={productData} />} />
                 </Routes>
             </Tabs>
         </Router>

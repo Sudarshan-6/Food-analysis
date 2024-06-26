@@ -9,7 +9,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 function ImageUpload() {
-
+  
   const { isLoading, setIsLoading } = useLoading();
   const { selectedFile, setSelectedFile,barcode,setPreviousSearches,previousSearches ,setBarcode,productData, setProductData } = useContext(Context);
   const [preview, setPreview] = useState(null);
@@ -90,7 +90,7 @@ function ImageUpload() {
             product_name : analysisData && productData.product_data.product_name,
             barcode : analysisData && productData.product_data.barcode
           }
-          setPreviousSearches([...previousSearches,newData])
+          setPreviousSearches(previousSearches => [...previousSearches,newData])
           console.log("hiiiii")
           
           setIsLoading(false);

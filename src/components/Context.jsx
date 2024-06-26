@@ -5,79 +5,77 @@ const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const { user } = useAuth0();
-  const [selectedOption, setSelectedOption] = useState(null);
 
-  const [productData, setProductData] = useState(()=>{
-    return JSON.parse(localStorage.getItem('product')) || null;
+  const [selectedOption, setSelectedOption] = useState(() => {
+    console.log('Initializing selectedOption');
+    const saved = localStorage.getItem('selectedOption');
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  const [productData, setProductData] = useState(() => {
+    console.log('Initializing productData');
+    const saved = localStorage.getItem('product');
+    return saved ? JSON.parse(saved) : null;
   });
 
   const [selectedFile, setSelectedFile] = useState(() => {
-    // Retrieve selected file name from local storage or default to null
+    console.log('Initializing selectedFile');
     return localStorage.getItem('selectedFile') || null;
   });
 
   const [barcode, setBarcode] = useState(() => {
-    // Retrieve barcode from local storage or default to null
+    console.log('Initializing barcode');
     return localStorage.getItem('barcode') || null;
   });
 
-  const [previousSearches, setPreviousSearches] = useState(()=>{
-    return JSON.parse(localStorage.getItem('previousSearches')) || [];
+  const [previousSearches, setPreviousSearches] = useState(() => {
+    console.log('Initializing previousSearches');
+    const saved = localStorage.getItem('previousSearches');
+    return saved ? JSON.parse(saved) : [];
   });
 
   const fetchPreviousSearches = async () => {
     try {
-      if (!user) return; // Do nothing if user is not logged in
+      if (!user) return;
 
-      // Fetch previous searches from the server
       const response = await fetch('http://localhost:5000/api/previous-searches', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: user.email }), // Send user's email as body
+        body: JSON.stringify({ email: user.email }),
       });
 
       const data = await response.json();
-  
       setPreviousSearches([...data]);
     } catch (error) {
       console.error('Error fetching previous searches:', error);
     }
   };
 
-
-  // Clear local storage on page refresh
   useEffect(() => {
-    localStorage.clear();
-  }, []);
+    console.log('Updating selectedOption in localStorage');
+    localStorage.setItem('selectedOption', JSON.stringify(selectedOption));
+  }, [selectedOption]);
 
-  
-  useEffect(()=>{
-    if(productData){
-      localStorage.setItem('product',JSON.stringify(productData));
-    }
-  },[productData])
-
-  useEffect(()=>{
-    if(previousSearches){
-      localStorage.setItem('previousSearches',JSON.stringify(previousSearches))
-    }
-  },[previousSearches])
-
-
-  // Update local storage whenever selected file changes
   useEffect(() => {
-    if (selectedFile) {
-      localStorage.setItem('selectedFile', selectedFile);
-    }
+    console.log('Updating productData in localStorage');
+    localStorage.setItem('product', JSON.stringify(productData));
+  }, [productData]);
+
+  useEffect(() => {
+    console.log('Updating previousSearches in localStorage');
+    localStorage.setItem('previousSearches', JSON.stringify(previousSearches));
+  }, [previousSearches]);
+
+  useEffect(() => {
+    console.log('Updating selectedFile in localStorage');
+    localStorage.setItem('selectedFile', selectedFile);
   }, [selectedFile]);
 
-  // Update local storage whenever barcode changes
   useEffect(() => {
-    if (barcode) {
-      localStorage.setItem('barcode', barcode);
-    }
+    console.log('Updating barcode in localStorage');
+    localStorage.setItem('barcode', barcode);
   }, [barcode]);
 
   return (

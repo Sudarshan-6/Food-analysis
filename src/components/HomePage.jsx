@@ -5,7 +5,7 @@ import Context from './Context';
 import ImageUpload from './ImageUpload';
 import SearchBar from './SearchBar';
 import Loading from './utils/loading/Loding';
-import { User, useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function HomePage() {
     const { selectedOption,fetchPreviousSearches } = useContext(Context);

@@ -2,13 +2,14 @@ import React from 'react';
 import './styles/Description.css';
 
 const Description = ({ data }) => {
+  // console.log("description:",data[0]);
   if (typeof data === 'string') {
     data = { text: data };
   } else if (Array.isArray(data) && typeof data[0] === 'string') {
     data = { text: data[0] };
   }
 
-  const text = data.text || '';
+  const text = data?.text || '';
 
   // Regex to split data into paragraphs and numbered points
   const parts = text.split(/(\d+\.\s)/).filter(part => part.trim() !== '');
